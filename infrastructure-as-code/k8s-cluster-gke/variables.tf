@@ -1,3 +1,7 @@
+variable "prefix" {
+  description = "This prefix will be included in the name of some resources. Use your own name or any other short string here."
+}
+
 variable "gcp_region" {
   description = "GCP region, e.g. us-east1"
   default = "us-east1"

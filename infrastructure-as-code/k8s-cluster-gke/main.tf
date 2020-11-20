@@ -11,9 +11,12 @@ data "vault_generic_secret" "gcp_credentials" {
 }
 
 provider "google" {
-  credentials = "${data.vault_generic_secret.gcp_credentials.data[var.gcp_project]}"
+  #credentials = "${data.vault_generic_secret.gcp_credentials.data[var.gcp_project]}"
+  #project     = "${var.gcp_project}"
+  #credentials = "${var.GOOGLE_CREDENTIALS}"
   project     = "${var.gcp_project}"
   region      = "${var.gcp_region}"
+  zone        = "${var.gcp_zone}"
 }
 
 resource "google_container_cluster" "k8sexample" {
