@@ -10,12 +10,13 @@ import "types"
 ##### Functions #####
 
 ### find_resources_with_standard_tags ###
-find_resources_with_standard_tags = func() {
+find_resources_with_standard_tags = func(resource_types) {
   resources = filter tfplan.resource_changes as address, rc {
     rc.provider_name matches "(.*)aws$" and
-    rc.type not in ["aws_autoscaling_group"] and
+    rc.type in resource_types and
   	rc.mode is "managed" and
-  	(rc.change.actions contains "create" or rc.change.actions contains "update")
+    (rc.change.actions contains "create" or rc.change.actions contains "update" or
+     rc.change.actions contains "read" or rc.change.actions contains "no-op")
   }
 
   return resources
@@ -278,7 +279,7 @@ validate_provider_in_allowed_regions = func(p, regions) {
             module_segments = strings.split(p.module_address, ".")
             num_segments = length(module_segments)
             parent_module = strings.join(module_segments[0:num_segments-2], ".")
-            current_module_name = module_segments[num_segments -1]
+            current_module_name = module_segments[num_segments-1]
 
             # Find module call that called current module
             if parent_module is "" {
