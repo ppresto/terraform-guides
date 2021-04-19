@@ -31,3 +31,16 @@ data "tfe_workspace_ids" "all" {
 locals {
   workspaces = "${data.tfe_workspace_ids.all.external_ids}" # map of names to IDs
 }
+
+variable "tfe_token" {}
+
+variable "tfe_hostname" {
+  description = "The domain where your TFE is hosted."
+  default     = "app.terraform.io"
+}
+variable "tfe_organization" {
+  description = "The TFE organization to apply your changes to."
+}
+variable "repo_org" {}
+
+variable "oauth_token_id" {}
