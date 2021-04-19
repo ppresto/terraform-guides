@@ -1,6 +1,6 @@
 resource "tfe_policy_set" "org" {
   #count                  = "${var.policies_org ? 1 : 0}"
-  name                   = "AWS - assumerole"
+  name                   = "AWS_assumeRole"
   description            = "Organization Policies"
   organization           = "${var.tfe_organization}"
   policies_path          = "governance/third-generation/aws/"
