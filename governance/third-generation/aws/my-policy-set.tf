@@ -4,7 +4,7 @@ resource "tfe_policy_set" "org" {
   description            = "Organization Policies"
   organization           = "${var.tfe_organization}"
   policies_path          = "governance/third-generation/aws/"
-  workspace_external_ids = [
+  workspace_ids          = [
     "${local.workspaces["ws_aws_serviceA"]}",
     "${local.workspaces["ws_aws_serviceB"]}"
   ]
