@@ -19,7 +19,7 @@ allowed_roles = {
     "(.*)-serviceA$",
     "^serviceA-(.*)",
   ],
-  "arn:aws:iam::567856785678:role/iam-role-serviceB": [
+  "arn:aws:iam::711129375688:role/iam-role-serviceB": [
     "(.*)-serviceB$",
     "^serviceB-(.*)",
   ],
