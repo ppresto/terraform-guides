@@ -16,7 +16,7 @@ module "aws-functions" {
 
 policy "restrict-assumed-roles-by-workspace" {
   source = "./restrict-assumed-roles-by-workspace.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft-mandatory"
 }
 
 policy "restrict-assumed-roles" {
