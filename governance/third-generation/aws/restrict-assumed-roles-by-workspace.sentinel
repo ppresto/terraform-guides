@@ -16,12 +16,12 @@ import "tfrun"
 # Allowed Roles Map
 allowed_roles = {
   "arn:aws:iam::711129375688:role/iam-role-serviceA": [
-    "(.*)-serviceA$",
-    "^serviceA-(.*)",
+    "(.*)_serviceA$",
+    "^serviceA_(.*)",
   ],
   "arn:aws:iam::711129375688:role/iam-role-serviceB": [
-    "(.*)-serviceB$",
-    "^serviceB-(.*)",
+    "(.*)_serviceB$",
+    "^serviceB_(.*)",
   ],
 }
 
