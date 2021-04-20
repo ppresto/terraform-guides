@@ -14,7 +14,8 @@ import "aws-functions" as aws
 # Include "complex" to allow role_arn with reference that is not a variable
 # or that has multiple references.
 allowed_roles = [
-  "arn:aws:iam::123412341234:role/terraform-assumed-role",
+  "arn:aws:iam::711129375688:role/iam-role-serviceB",
+  "arn:aws:iam::711129375688:role/iam-role-serviceA",
 ]
 
 ##### Rules #####
